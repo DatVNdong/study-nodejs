@@ -1,0 +1,7 @@
+Quy tắc đánh version
+Ví dụ 3.0.5
+ -> Số 5 là số bug fix, bug nhỏ, release small version
+ -> Số 0 là khi release tính năng lớn, bug lớn
+ -> Số 3 là khi thay đổi cực lớn
+Đánh từ 0 tới 9 thôi
+Version ban đầu luôn là 0.0.1
