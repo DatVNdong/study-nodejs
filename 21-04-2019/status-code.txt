@@ -1,0 +1,4 @@
+200: success
+404: not found
+401: not authorization
+400: bad request

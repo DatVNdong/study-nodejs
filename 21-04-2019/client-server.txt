@@ -1,0 +1,14 @@
+1. Mô hình web client - server (client-side và server-side)
+    - web api - server return data
+    - web view - server return html view + data
+2. API là những url trả về data kiểu json hoặc xml
+3. Express.js là 1 trong những framework đầu tiên của nodejs
+(Framework khác như Hapi.js, Koa.js, Adonis.js, total.js...Net.js: thường dùng nhân là Express)
+    - Ưu điểm:
+        + Ổn định (Stability)
+        + Cộng đồng (Community)
+        + Dễ hiểu (Understandble)
+    - Nhược điểm:
+        + Bảo mật không cao (Weak security)
+        + Tón thời gian (Wasting time)
+        + Hiệu suất (Performance benchmark)
