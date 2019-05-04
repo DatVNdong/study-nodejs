@@ -18,9 +18,10 @@ const ERROR_NOT_FOUND_USER = 'Not found user';
 
 /* parse application/x-www-form-urlencoded */
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({ type: 'application/*+json' }));
 
 /* Example */
-app.get('/api/v1/say-hello', (req, res, next) => {
+app.get('/say-hello', (req, res, next) => {
     /* Parametter:
         req: Receiving data from client
         res: Return data to client
@@ -37,7 +38,26 @@ app.get('/api/v1/say-hello', (req, res, next) => {
         message: 'hello'
     });
 
-}); // -> this is router - đường dẫn url
+}); // -> this is router - đường dẫn url, trong router có controller
+
+app.put('/api/v1/put-with-json-body', (req, res, next) => {
+    try {
+        const body = req.body;
+        const query = req.query;
+        return res.json(body);
+    } catch (error) {
+        console.error(error);
+        occurredError(res, ERROR_WENT_WRONG_MESSAGE);
+    }
+});
+
+// Nếu 2 có API trùng nhau thì nó chạy tới cái đầu tiên tìm được, chứ không lỗi
+app.get('/same-api', (req, res, next) => {
+    return res.json('1');
+});
+app.get('/same-api', (req, res, next) => {
+    return res.json('2');
+});
 
 /* 1. POST /api/v1/users 
     Create new usre to users.json file
@@ -113,8 +133,8 @@ app.put('/api/v1/users/:id', (req, res, next) => {
             return occurredError(res, ERROR_DATABASE_MESSAGE);
         }
         const userIndex = findUserIndex(existingUsers, userId);
-        const user = existingUsers[userIndex];
         if (userIndex !== -1) {
+            const user = existingUsers[userIndex];
             if (username) {
                 user.username = username;
                 isChangeValue = true;
