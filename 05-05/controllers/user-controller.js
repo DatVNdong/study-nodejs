@@ -1,15 +1,26 @@
 const express = require('express')
     , router = express.Router()
-    , userMiddleware = require('../middlewares/user-middleware')
     , constants = require('../commons/constants')
+    , userMiddleware = require('../middlewares/user-middleware')
+    , userService = require('../services/user-service')
     , User = require('../models/user');
 
-router.post(constants.API_URL.USER_V1, userMiddleware.validateCreateUser, (req, res, next) => {
+const asyncMiddleware = fn =>
+    (req, res, next) => {
+        Promise.resolve(fn(req, res, next))
+            .catch(next);
+    };
+
+router.post(constants.API_URL.USER_V1, userMiddleware.validateCreateUser, asyncMiddleware(async (req, res, next) => {
     const body = req.body;
 
-    const user = new User(1, body.username, body.password);
-    console.log(user.toString());
-});
+    const user = new User(body.username, body.password);
+    const result = await userService.create(user);
+    return res.json({
+        message: 'Create new user succesfully',
+        data: result
+    });
+}));
 
 module.exports = router;
 // const ERROR_WENT_WRONG_MESSAGE = 'Something went wrong';

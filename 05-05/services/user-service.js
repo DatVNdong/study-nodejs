@@ -1,12 +1,12 @@
 const constants = require('../commons/constants');
-const db = require('../helpers/connect-db').GetDB().collection(constants["DB_COLLECTIONS_NAME"].USER);
+const adapter = require('../helpers/connect-db');
 
-exports.create = async (user) => {
+exports.create = async user => {
     try {
-        console.log('user-service -> ' + db);
+        const db = await adapter.getDB(constants.DB_COLLECTIONS_NAME.USER);
         const result = await db.insertOne(user, {'forceServerObjectId': false});
         return result.ops;
     } catch (error) {
-        return next(error);
+        return error;
     }
 };

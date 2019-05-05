@@ -1,31 +1,29 @@
-const mongoClient = require('mongodb').MongoClient;
-const configs = require('../configs/configs');
+const mongoClient = require('mongodb').MongoClient
+    , configs = require('../configs/configs')
+    , database = {db: undefined};
 
-let database = {db: undefined};
-
-module.exports = database;
-
-database.GetDB = () => {
+database.getDB = async (collectionName) => {
     if (typeof database.db === 'undefined') {
-        database.db = database.InitDB();
+        database.db = await database.initDB();
     }
-    return database.db;
+    return database.db.collection(collectionName);
 };
 
-database.InitDB = async () => {
+database.initDB = async () => {
     try {
-        await mongoClient.connect(configs.DB_CONFIG.URL + configs.DB_CONFIG.PORT, function (err, client) {
-            console.log("Connected successfully to server");
-            return client.db(configs.DB_CONFIG.DB_NAME);
-        });
+        const client = await mongoClient.connect(configs.DB_CONFIG.URL + configs.DB_CONFIG.PORT);
+        console.log('Connected successfully to server');
+        return client.db(configs.DB_CONFIG.DB_NAME);
     } catch (err) {
         console.log(err);
         process.exit(1);
     }
 };
 
-database.Disconnect = () => {
+database.disconnect = () => {
     if (database.db) {
         database.db.close();
     }
 };
+
+module.exports = database;
