@@ -2,33 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13d70463-c698-4195-8cf6-56d312e46a6d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Study.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/saveactions_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-05-2019/.idea/05-05-2019.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-05-2019/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-05-2019/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-05-2019/.idea/saveactions_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-05-2019/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-05-2019/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-05-2019/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-05-2019/commons/constants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-05-2019/configs/configs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-05-2019/controllers/user-controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-05-2019/helpers/connect-db.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-05-2019/middlewares/user-middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-05-2019/models/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-05-2019/services/user-service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-05-2019/sql.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/24-04-2019/comment-fix.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/24-04-2019/middlewares/user-middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/24-04-2019/middlewares/user-middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,10 +17,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/24-04-2019/comment-fix.txt">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
-              <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+            <state relative-caret-position="50">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -93,6 +68,7 @@
         <option value="$PROJECT_DIR$/05-05-2019/services/user-service.js" />
         <option value="$PROJECT_DIR$/24-04-2019/middlewares/user-middleware.js" />
         <option value="$PROJECT_DIR$/24-04-2019/comment-fix.txt" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -116,11 +92,6 @@
             <path>
               <item name="Study" type="b2602c69:ProjectViewProjectNode" />
               <item name="Study" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Study" type="462c0819:PsiDirectoryNode" />
-              <item name="24-04-2019" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -182,12 +153,12 @@
       <workItem from="1557022027098" duration="6369000" />
       <workItem from="1557034129158" duration="3056000" />
       <workItem from="1557039564476" duration="8980000" />
-      <workItem from="1557054781516" duration="8803000" />
+      <workItem from="1557054781516" duration="9069000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28800000" />
+    <option name="totallyTimeSpent" value="29066000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -305,9 +276,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/10.15.3/node-typings/node_modules/@types/node/globals.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
@@ -386,8 +354,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/24-04-2019/comment-fix.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+        <state relative-caret-position="600">
+          <caret line="24" column="45" lean-forward="true" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
