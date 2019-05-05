@@ -1,8 +1,8 @@
 const ERROR_IS_NOT_NUMBER_MESSAGE = (params) => {
-    return params + 'have to be number';
+    return params + ' have to be number';
 };
 const ERROR_FIELD_REQUIRED_MESSAGE = (params) => {
-    return params + 'is required field';
+    return params + ' is required field';
 };
 
 exports.validateCreateUser = (req, res, next) => {

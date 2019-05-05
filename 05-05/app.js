@@ -1,15 +1,13 @@
 const express = require('express')
     , app = express()
     , bodyParser = require('body-parser')
-    , configs = require('./configs/configs')
-    , userController = require('./controllers/user-controller');
+    , configs = require('./configs/configs');
 
-app.use(bodyParser.json({type: configs["APP_CONFIG"].BODY_PARSE_TYPE}));
+app.use(bodyParser.json({type: configs.APP_CONFIG.BODY_PARSE_TYPE}));
 
-app.use(require('./middlewares/user-middleware'));
 app.use(require('./controllers/user-controller'));
 app.use(function (err, req, res, next) {
-    console.log('--> Having error');
+    console.log(`--> Having error: ${err.message}`);
     return res.status(400).json({
         message: err.message,
         // Muốn trả error ra cho người dùng từ res.json thì dùng error.stack hoặc stringify
@@ -48,4 +46,4 @@ app.use(function (err, req, res, next) {
 //     // client.close();
 // });
 
-app.listen(configs["APP_CONFIG"].PORT, () => console.log(`Listening on port ${configs["APP_CONFIG"].PORT}!`));
+app.listen(configs.APP_CONFIG.PORT, () => console.log(`Listening on port ${configs.APP_CONFIG.PORT}!`));

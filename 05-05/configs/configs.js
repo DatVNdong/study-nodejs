@@ -8,3 +8,8 @@ const DB_CONFIG = {
     PORT: 27017,
     DB_NAME: 'study_test'
 };
+
+module.exports = Object.freeze({
+    APP_CONFIG,
+    DB_CONFIG
+});

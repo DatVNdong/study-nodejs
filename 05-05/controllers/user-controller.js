@@ -4,12 +4,14 @@ const express = require('express')
     , constants = require('../commons/constants')
     , User = require('../models/user');
 
-router.post(constants["API_URL"].USER_V1, userMiddleware.validateCreateUser, (req, res, next) => {
+router.post(constants.API_URL.USER_V1, userMiddleware.validateCreateUser, (req, res, next) => {
     const body = req.body;
 
     const user = new User(1, body.username, body.password);
     console.log(user.toString());
 });
+
+module.exports = router;
 // const ERROR_WENT_WRONG_MESSAGE = 'Something went wrong';
 // const ERROR_DATABASE_MESSAGE = 'Database error';
 // const ERROR_NOT_FOUND_USER = 'Not found user';

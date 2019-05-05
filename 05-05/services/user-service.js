@@ -3,7 +3,7 @@ const db = require('../helpers/connect-db').GetDB().collection(constants["DB_COL
 
 exports.create = async (user) => {
     try {
-        console.log('->' + db);
+        console.log('user-service -> ' + db);
         const result = await db.insertOne(user, {'forceServerObjectId': false});
         return result.ops;
     } catch (error) {

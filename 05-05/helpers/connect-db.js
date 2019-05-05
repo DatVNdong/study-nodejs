@@ -14,9 +14,9 @@ database.GetDB = () => {
 
 database.InitDB = async () => {
     try {
-        await mongoClient.connect(configs["DB_CONFIG"].URL + configs["DB_CONFIG"].PORT, function (err, client) {
+        await mongoClient.connect(configs.DB_CONFIG.URL + configs.DB_CONFIG.PORT, function (err, client) {
             console.log("Connected successfully to server");
-            return client.db(configs["DB_CONFIG"].DB_NAME);
+            return client.db(configs.DB_CONFIG.DB_NAME);
         });
     } catch (err) {
         console.log(err);
