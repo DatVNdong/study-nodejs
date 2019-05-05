@@ -1,0 +1,25 @@
+@Nguyễn Văn Đạt
+1. https://github.com/DatVNdong/study-nodejs/blob/43ade69786681a9fe41a2d3bcaa626644b933513/24-04-2019/controllers/user-controller.js#L38
+Hình như tất cả try catch e đang log error, để trigger error, e có thể log nó một chỗ, đó là trong error handling nhé.
+
+2. https://github.com/DatVNdong/study-nodejs/blob/43ade69786681a9fe41a2d3bcaa626644b933513/24-04-2019/controllers/user-controller.js#L48
+Không nên truyền biến không rõ ràng khi sử dụng hàm nhé. Hiện tại e đang pass next là một single arg. Nó gây khó khăn cho người đọc code, không biết mục đích nó làm gì?
+
+3. https://github.com/DatVNdong/study-nodejs/blob/43ade69786681a9fe41a2d3bcaa626644b933513/24-04-2019/controllers/user-controller.js#L149
+Hàm này, e không cần phải try catch nữa, mình có cái try catch ở hanlder controller rồi nhé. Và e nên rõ ràng hoá lỗi ở handler controller thay vì trong private function. Mục đích là để người đọc có thể biết được lỗi trả về là gì khi chỉ cần nhìn vào handler controller.
+
+4. Thay vì findUserIndex, thì e có thể viết thành findUserByUserId và trả về user luôn. Vì sau khi trả về index, mình lại phải tìm user by index đó nữa. const user = existingUsers[userIndex];
+Còn nếu đơn thuần chỉ lấy userIndex, thì chỉ cần dùng findIndex function của js anh nghĩ là ok rồi.
+Việc tách private function nhiều nếu không thực sự cần thiết sẽ gây reasign variable, tốn bộ nhớ ram. Mặc dù nó không ảnh hưởng lớn, nhưng vẫn nên cân nhắc.
+https://github.com/DatVNdong/study-nodejs/blob/43ade69786681a9fe41a2d3bcaa626644b933513/24-04-2019/controllers/user-controller.js#L74
+
+
+5. https://github.com/DatVNdong/study-nodejs/blob/43ade69786681a9fe41a2d3bcaa626644b933513/24-04-2019/controllers/user-controller.js#L135
+Block if else này: Nếu dùng return pattern thì e hoàn toàn có thể bỏ else nhé.
+if (userIndex !== -1) {
+    return res.json({
+        message: 'Info of user' + userId,
+        data: existingUsers[userIndex]
+    });
+}
+return next(new Error(ERROR_NOT_FOUND_USER));

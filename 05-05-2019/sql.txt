@@ -1,0 +1,14 @@
+1. CSDL
+SQL <> Non -SQL
+
+2. Mongo 27017
+Robo3T, robomongo
+
+3. statement
+find, findOne...
+
+insertOne, insertMany
+
+removeDocument
+
+....

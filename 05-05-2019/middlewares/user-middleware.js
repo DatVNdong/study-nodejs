@@ -12,10 +12,6 @@ exports.validateCreateUser = (req, res, next) => {
 
     if (!username) {
         return next(new Error(ERROR_FIELD_REQUIRED_MESSAGE('username')));
-        // return res.status(400).json({
-        //     message: 'username is required field',
-        //     error: new Error('username_required').stack
-        // });
     }
     if (!password) {
         return next(new Error(ERROR_FIELD_REQUIRED_MESSAGE('password')));
