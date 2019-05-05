@@ -1,4 +1,4 @@
-const DB_COLLECTIONS_NAME = {
+const COLLECTIONS_NAME = {
     USER: 'users'
 };
 
@@ -7,6 +7,6 @@ const API_URL = {
 };
 
 module.exports = Object.freeze({
-    DB_COLLECTIONS_NAME,
+    COLLECTIONS_NAME,
     API_URL
 });

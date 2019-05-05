@@ -1,26 +1,60 @@
 const express = require('express')
     , router = express.Router()
-    , constants = require('../commons/constants')
+    , constants = require('../commons/resources')
     , userMiddleware = require('../middlewares/user-middleware')
     , userService = require('../services/user-service')
     , User = require('../models/user');
 
-const asyncMiddleware = fn =>
-    (req, res, next) => {
-        Promise.resolve(fn(req, res, next))
-            .catch(next);
-    };
+/* 1. POST /api/v1/users
+    Create new user to database
+*/
+router.post(constants.API_URL.USER_V1, userMiddleware.validateCreateUser, async (req, res, next) => {
+    try {
+        const body = req.body;
 
-router.post(constants.API_URL.USER_V1, userMiddleware.validateCreateUser, asyncMiddleware(async (req, res, next) => {
-    const body = req.body;
+        const userId = await userService.findAmount();
+        const user = new User(userId, body.username, body.password);
+        const result = await userService.create(user);
+        return res.json({
+            message: 'Create new user successfully',
+            data: result.ops
+        });
+    } catch (err) {
+        return next(err);
+    }
+});
 
-    const user = new User(body.username, body.password);
-    const result = await userService.create(user);
-    return res.json({
-        message: 'Create new user succesfully',
-        data: result
-    });
-}));
+/* 2. GET /api/v1/users
+    Get list of user from database
+*/
+router.get(constants.API_URL.USER_V1, async (req, res, next) => {
+    try {
+        const users = await userService.findAll();
+        return res.json({
+            message: 'List of users',
+            data: users
+        });
+    } catch (err) {
+        return next(err);
+    }
+});
+
+/* 5. GET /api/v1/users/:id
+    Get info of one user by the given userId
+*/
+router.get(`${constants.API_URL.USER_V1}/:id`, async (req, res, next) => {
+    try {
+        const userId = parseInt(req.params.id);
+
+        const user = await userService.findOne(userId);
+        return res.json({
+            message: 'Info of user',
+            data: user
+        });
+    } catch (err) {
+        return next(err);
+    }
+});
 
 module.exports = router;
 // const ERROR_WENT_WRONG_MESSAGE = 'Something went wrong';
@@ -133,27 +167,7 @@ module.exports = router;
 //     }
 // };
 //
-// /* 5. GET /api/v1/users/:id
-//     Get info of one user by the given userId
-// */
-// exports.getUserById = (req, res, next) => {
-//     try {
-//         const userId = parseInt(req.params.id);
-//         const existingUsers = getExistingUsers(next);
-//         const userIndex = findUserIndex(existingUsers, userId);
-//         if (userIndex !== -1) {
-//             return res.json({
-//                 message: 'Info of user' + userId,
-//                 data: existingUsers[userIndex]
-//             });
-//         } else {
-//             return next(new Error(ERROR_NOT_FOUND_USER));
-//         }
-//     } catch (error) {
-//         console.error(error);
-//         return next(new Error(ERROR_WENT_WRONG_MESSAGE));
-//     }
-// };
+
 //
 // function findUserIndex(existingUsers, idUser) {
 //     return existingUsers.findIndex(item => {
