@@ -12,8 +12,7 @@ router.post(resources.API_URL.USER_V1, userMiddleware.validateCreateUser, async 
     try {
         const body = req.body;
 
-        const userId = await userService.findAmount();
-        const user = new User(userId, body.username, body.password);
+        const user = new User(await userService.generateId(), body.username, body.password);
         const result = await userService.create(user);
         return res.json({
             message: resources.MESSAGE.SUCCESS.CREATE_USER,
@@ -46,7 +45,6 @@ router.put(`${resources.API_URL.USER_V1}/:id`, userMiddleware.validateUserId, as
     try {
         const userId = parseInt(req.params.id);
         const body = req.body;
-        const username = body.username;
         const password = body.password;
         let result = {};
         let isChangeValue = false;
@@ -56,10 +54,6 @@ router.put(`${resources.API_URL.USER_V1}/:id`, userMiddleware.validateUserId, as
             return res.json({
                 message: resources.MESSAGE.ERROR.NOT_EXISTED_USER,
             });
-        }
-        if (username) {
-            user.username = username;
-            isChangeValue = true;
         }
         if (password) {
             user.password = password;
