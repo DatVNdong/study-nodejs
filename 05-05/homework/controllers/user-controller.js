@@ -52,6 +52,11 @@ router.put(`${resources.API_URL.USER_V1}/:id`, userMiddleware.validateUserId, as
         let isChangeValue = false;
 
         const user = await userService.findOne(userId);
+        if (user === null) {
+            return res.json({
+                message: resources.MESSAGE.ERROR.NOT_EXISTED_USER,
+            });
+        }
         if (username) {
             user.username = username;
             isChangeValue = true;
@@ -66,7 +71,7 @@ router.put(`${resources.API_URL.USER_V1}/:id`, userMiddleware.validateUserId, as
 
         return res.json({
             message: isChangeValue ? resources.MESSAGE.SUCCESS.UPDATE_USER : resources.MESSAGE.SUCCESS.NOTHING_CHANGE,
-            data: isChangeValue ? result.ops : user
+            data: result.ops
         });
     } catch (err) {
         return next(err);
@@ -80,10 +85,9 @@ router.delete(`${resources.API_URL.USER_V1}/:id`, userMiddleware.validateUserId,
     try {
         const userId = parseInt(req.params.id);
 
-        const result = await userService.delete(userId);
+        const result = JSON.parse(await userService.delete(userId));
         return res.json({
-            message: resources.MESSAGE.SUCCESS.DELETE_USER,
-            data: result.ops
+            message: result.n === 0 ? resources.MESSAGE.ERROR.NOT_EXISTED_USER : resources.MESSAGE.SUCCESS.DELETE_USER
         });
     } catch (err) {
         return next(err);
