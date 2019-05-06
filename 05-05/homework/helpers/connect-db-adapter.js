@@ -1,6 +1,7 @@
 const mongoClient = require('mongodb').MongoClient
     , configs = require('../configs/configs')
-    , database = {db: undefined};
+    , database = { db: undefined }
+    , resources = require('../commons/resources');
 
 let collections = [];
 
@@ -22,11 +23,11 @@ database.getDB = async (collectionName) => {
 
 initDB = async () => {
     try {
-        const client = await mongoClient.connect(configs.DB_CONFIG.URL + configs.DB_CONFIG.PORT, {useNewUrlParser: true});
-        console.log('Connected successfully to server');
+        const client = await mongoClient.connect(configs.DB_CONFIG.URL + configs.DB_CONFIG.PORT, { useNewUrlParser: true });
+        console.log(resources.MESSAGE.SUCCESS.CONNECT_SERVER);
         return client.db(configs.DB_CONFIG.DB_NAME);
     } catch (err) {
-        console.log(err);
+        console.log(`-> ${resources.MESSAGE.ERROR.DATABASE}: ${err}`);
         process.exit(1);
     }
 };

@@ -6,6 +6,6 @@ module.exports = class User {
     }
 
     toString() {
-        console.log(`id: ${this._id} - username: ${this.username}`);
+        return `id: ${this._id} - username: ${this.username} - password: ${this.password}`;
     }
 };

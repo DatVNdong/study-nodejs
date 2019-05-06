@@ -28,10 +28,28 @@ exports.findAll = async () => {
     }
 };
 
+exports.update = async (id, user) => {
+    try {
+        const db = await adapter.getDB(constants.COLLECTIONS_NAME.USER);
+        return await db.replaceOne({ _id: id }, user);
+    } catch (err) {
+        throw err;
+    }
+};
+
+exports.delete = async id => {
+    try {
+        const db = await adapter.getDB(constants.COLLECTIONS_NAME.USER);
+        return await db.deleteOne({ _id: id });
+    } catch (err) {
+        throw err;
+    }
+};
+
 exports.findOne = async id => {
     try {
         const db = await adapter.getDB(constants.COLLECTIONS_NAME.USER);
-        return await db.findOne({_id: id});
+        return await db.findOne({ _id: id });
     } catch (err) {
         throw err;
     }
