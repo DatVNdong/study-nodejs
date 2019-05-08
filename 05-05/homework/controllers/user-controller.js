@@ -1,21 +1,24 @@
-const express = require('express')
-    , router = express.Router()
-    , resources = require('../commons/resources')
-    , userMiddleware = require('../middlewares/user-middleware')
-    , userService = require('../services/user-service')
-    , User = require('../models/user');
+const express = require('express');
+const router = express.Router();
+const resources = require('../commons/resources');
+const userMiddleware = require('../middlewares/user-middleware');
+const userService = require('../services/user-service');
+const User = require('../models/user');
+const userRoute = resources.API_URL.USER_V1;
+const successMessage = resources.MESSAGE.SUCCESS;
+const errorMessage = resources.MESSAGE.ERROR;
 
 /* 1. POST /api/v1/users
     Create new user to database
 */
-router.post(resources.API_URL.USER_V1, userMiddleware.validateCreateUser, async (req, res, next) => {
+router.post(userRoute, userMiddleware.validateCreateUser, async (req, res, next) => {
     try {
         const body = req.body;
 
         const user = new User(await userService.generateId(), body.username, body.password);
         const result = await userService.create(user);
         return res.json({
-            message: resources.MESSAGE.SUCCESS.CREATE_USER,
+            message: successMessage.CREATE_USER,
             data: result.ops
         });
     } catch (err) {
@@ -26,11 +29,11 @@ router.post(resources.API_URL.USER_V1, userMiddleware.validateCreateUser, async 
 /* 2. GET /api/v1/users
     Get list of user from database
 */
-router.get(resources.API_URL.USER_V1, async (req, res, next) => {
+router.get(userRoute, async (req, res, next) => {
     try {
         const users = await userService.findAll();
         return res.json({
-            message: resources.MESSAGE.SUCCESS.GET_LIST_USERS,
+            message: successMessage.GET_LIST_USERS,
             data: users
         });
     } catch (err) {
@@ -41,7 +44,7 @@ router.get(resources.API_URL.USER_V1, async (req, res, next) => {
 /* 3. PUT /api/v1/users/:id
     Update one user by the given userId in database
 */
-router.put(`${resources.API_URL.USER_V1}/:id`, userMiddleware.validateUserId, async (req, res, next) => {
+router.put(`${userRoute}/:id`, userMiddleware.validateUserId, async (req, res, next) => {
     try {
         const userId = parseInt(req.params.id);
         const body = req.body;
@@ -52,7 +55,7 @@ router.put(`${resources.API_URL.USER_V1}/:id`, userMiddleware.validateUserId, as
         const user = await userService.findOne(userId);
         if (user === null) {
             return res.json({
-                message: resources.MESSAGE.ERROR.NOT_EXISTED_USER,
+                message: errorMessage.NOT_EXISTED_USER,
             });
         }
         if (password) {
@@ -64,7 +67,7 @@ router.put(`${resources.API_URL.USER_V1}/:id`, userMiddleware.validateUserId, as
         }
 
         return res.json({
-            message: isChangeValue ? resources.MESSAGE.SUCCESS.UPDATE_USER : resources.MESSAGE.SUCCESS.NOTHING_CHANGE,
+            message: isChangeValue ? successMessage.UPDATE_USER : successMessage.NOTHING_CHANGE,
             data: result.ops
         });
     } catch (err) {
@@ -75,13 +78,13 @@ router.put(`${resources.API_URL.USER_V1}/:id`, userMiddleware.validateUserId, as
 /* 4. DELETE /api/v1/users/:id
     Delete info of one user by the given userId
 */
-router.delete(`${resources.API_URL.USER_V1}/:id`, userMiddleware.validateUserId, async (req, res, next) => {
+router.delete(`${userRoute}/:id`, userMiddleware.validateUserId, async (req, res, next) => {
     try {
         const userId = parseInt(req.params.id);
 
         const result = JSON.parse(await userService.delete(userId));
         return res.json({
-            message: result.n === 0 ? resources.MESSAGE.ERROR.NOT_EXISTED_USER : resources.MESSAGE.SUCCESS.DELETE_USER
+            message: result.n === 0 ? errorMessage.NOT_EXISTED_USER : successMessage.DELETE_USER
         });
     } catch (err) {
         return next(err);
@@ -91,13 +94,13 @@ router.delete(`${resources.API_URL.USER_V1}/:id`, userMiddleware.validateUserId,
 /* 5. GET /api/v1/users/:id
     Get info of one user by the given userId
 */
-router.get(`${resources.API_URL.USER_V1}/:id`, userMiddleware.validateUserId, async (req, res, next) => {
+router.get(`${userRoute}/:id`, userMiddleware.validateUserId, async (req, res, next) => {
     try {
         const userId = parseInt(req.params.id);
 
         const user = await userService.findOne(userId);
         return res.json({
-            message: user === null ? resources.MESSAGE.ERROR.NOT_EXISTED_USER : resources.MESSAGE.SUCCESS.GET_USER_BY_ID,
+            message: user === null ? errorMessage.NOT_EXISTED_USER : successMessage.GET_USER_BY_ID,
             data: user
         });
     } catch (err) {

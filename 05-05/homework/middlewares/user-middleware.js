@@ -1,5 +1,5 @@
-const resources = require('../commons/resources')
-    , userService = require('../services/user-service');
+const resources = require('../commons/resources');
+const userService = require('../services/user-service');
 
 exports.validateCreateUser = async (req, res, next) => {
     try {

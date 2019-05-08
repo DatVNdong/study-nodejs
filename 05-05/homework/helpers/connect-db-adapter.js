@@ -1,7 +1,7 @@
-const mongoClient = require('mongodb').MongoClient
-    , configs = require('../configs/configs')
-    , database = { db: undefined }
-    , resources = require('../commons/resources');
+const mongoClient = require('mongodb').MongoClient;
+const configs = require('../configs/configs');
+const database = {db: undefined};
+const resources = require('../commons/resources');
 
 let collections = [];
 

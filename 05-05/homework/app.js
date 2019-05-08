@@ -1,8 +1,8 @@
-const express = require('express')
-    , app = express()
-    , bodyParser = require('body-parser')
-    , configs = require('./configs/configs')
-    , resources = require('./commons/resources');
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const configs = require('./configs/configs');
+const resources = require('./commons/resources');
 
 app.use(bodyParser.json({ type: configs.APP_CONFIG.BODY_PARSE_TYPE }));
 

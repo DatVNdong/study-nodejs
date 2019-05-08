@@ -1,5 +1,5 @@
-const resources = require('../commons/resources')
-    , adapter = require('../helpers/connect-db-adapter');
+const resources = require('../commons/resources');
+const adapter = require('../helpers/connect-db-adapter');
 
 async function getDB() {
     return await adapter.getDB(resources.COLLECTIONS_NAME.USER);
