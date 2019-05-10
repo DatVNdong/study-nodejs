@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13d70463-c698-4195-8cf6-56d312e46a6d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/05-08/homework/controllers/product-controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-08/homework/models/product.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-08/homework/services/product-service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-08/homework/services/user-service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05-08/homework/validations/product-validation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/05-05/homework/commons/resources.js" beforeDir="false" afterPath="$PROJECT_DIR$/05-05/homework/commons/resources.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/05-05/homework/controllers/user-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/05-05/homework/controllers/user-controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/05-08/homework/apis/product-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/05-08/homework/apis/product-api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/05-08/homework/apis/user-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/05-08/homework/apis/user-api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/05-08/homework/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/05-08/homework/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/05-08/homework/commons/resources.js" beforeDir="false" afterPath="$PROJECT_DIR$/05-08/homework/commons/resources.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05-08/homework/controllers/product-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/05-08/homework/controllers/product-controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/05-08/homework/controllers/user-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/05-08/homework/controllers/user-controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/05-08/homework/validations/user-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/05-08/homework/validations/user-validation.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,7 +20,7 @@
     <favorites_list name="Study" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -110,14 +100,14 @@
         <option value="$PROJECT_DIR$/05-05/homework/commons/resources.js" />
         <option value="$PROJECT_DIR$/05-05/homework/controllers/user-controller.js" />
         <option value="$PROJECT_DIR$/05-08/homework/commons/resources.js" />
-        <option value="$PROJECT_DIR$/05-08/homework/apis/user-api.js" />
         <option value="$PROJECT_DIR$/05-08/homework/validations/user-validation.js" />
         <option value="$PROJECT_DIR$/05-08/homework/validations/product-validation.js" />
         <option value="$PROJECT_DIR$/05-08/homework/apis/product-api.js" />
         <option value="$PROJECT_DIR$/05-08/homework/services/user-service.js" />
         <option value="$PROJECT_DIR$/05-08/homework/services/product-service.js" />
-        <option value="$PROJECT_DIR$/05-08/homework/controllers/product-controller.js" />
         <option value="$PROJECT_DIR$/05-08/homework/controllers/user-controller.js" />
+        <option value="$PROJECT_DIR$/05-08/homework/controllers/product-controller.js" />
+        <option value="$PROJECT_DIR$/05-08/homework/apis/user-api.js" />
       </list>
     </option>
   </component>
@@ -141,7 +131,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -149,10 +138,78 @@
               <item name="Study" type="b2602c69:ProjectViewProjectNode" />
               <item name="Study" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Study" type="462c0819:PsiDirectoryNode" />
+              <item name="05-08" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Study" type="462c0819:PsiDirectoryNode" />
+              <item name="05-08" type="462c0819:PsiDirectoryNode" />
+              <item name="homework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Study" type="462c0819:PsiDirectoryNode" />
+              <item name="05-08" type="462c0819:PsiDirectoryNode" />
+              <item name="homework" type="462c0819:PsiDirectoryNode" />
+              <item name="apis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Study" type="462c0819:PsiDirectoryNode" />
+              <item name="05-08" type="462c0819:PsiDirectoryNode" />
+              <item name="homework" type="462c0819:PsiDirectoryNode" />
+              <item name="commons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Study" type="462c0819:PsiDirectoryNode" />
+              <item name="05-08" type="462c0819:PsiDirectoryNode" />
+              <item name="homework" type="462c0819:PsiDirectoryNode" />
+              <item name="configs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Study" type="462c0819:PsiDirectoryNode" />
+              <item name="05-08" type="462c0819:PsiDirectoryNode" />
+              <item name="homework" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Study" type="462c0819:PsiDirectoryNode" />
+              <item name="05-08" type="462c0819:PsiDirectoryNode" />
+              <item name="homework" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Study" type="462c0819:PsiDirectoryNode" />
+              <item name="05-08" type="462c0819:PsiDirectoryNode" />
+              <item name="homework" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Study" type="462c0819:PsiDirectoryNode" />
+              <item name="05-08" type="462c0819:PsiDirectoryNode" />
+              <item name="homework" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Study" type="462c0819:PsiDirectoryNode" />
+              <item name="05-08" type="462c0819:PsiDirectoryNode" />
+              <item name="homework" type="462c0819:PsiDirectoryNode" />
+              <item name="validations" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -223,11 +280,12 @@
       <workItem from="1557322240070" duration="2097000" />
       <workItem from="1557497303614" duration="121000" />
       <workItem from="1557497466925" duration="18093000" />
+      <workItem from="1557515942334" duration="424000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76422000" />
+    <option name="totallyTimeSpent" value="76846000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -458,13 +516,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/05-08/homework/middlewares/user-middleware.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/05-08/homework/middlewares/user-middleware.js" />
     <entry file="file://$PROJECT_DIR$/05-05/homework/helpers/connect-db-adapter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -486,28 +538,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/05-08/homework/commons/resources.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/05-08/homework/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/05-08/homework/validations/user-validation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/05-08/homework/apis/user-api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
@@ -528,31 +559,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/05-08/homework/services/user-service.js">
+    <entry file="file://$PROJECT_DIR$/05-08/homework/models/user.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/05-08/homework/commons/resources.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="30" lean-forward="true" selection-end-line="70" selection-end-column="2" />
+        <state relative-caret-position="302">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/05-08/homework/services/product-service.js">
+    <entry file="file://$PROJECT_DIR$/05-08/homework/apis/user-api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="50">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/05-08/homework/apis/product-api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="43" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/05-08/homework/controllers/user-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2125">
-          <caret line="85" column="80" selection-start-line="85" selection-start-column="80" selection-end-line="85" selection-end-column="80" />
+        <state relative-caret-position="1225">
+          <caret line="49" column="22" lean-forward="true" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/05-08/homework/controllers/product-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="87" column="80" selection-start-line="87" selection-start-column="80" selection-end-line="87" selection-end-column="80" />
+        <state relative-caret-position="550">
+          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -563,20 +604,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/05-08/homework/models/user.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/05-08/homework/validations/product-validation.js">
+    <entry file="file://$PROJECT_DIR$/05-08/homework/services/product-service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="28" column="17" lean-forward="true" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+        <state relative-caret-position="200">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/05-08/homework/apis/product-api.js">
+    <entry file="file://$PROJECT_DIR$/05-08/homework/services/user-service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="56" lean-forward="true" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+        <state relative-caret-position="400">
+          <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/05-08/homework/validations/product-validation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-490">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/05-08/homework/validations/user-validation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="7" />
         </state>
       </provider>
     </entry>
