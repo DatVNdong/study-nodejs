@@ -3,7 +3,7 @@ const API_URL = {
 };
 
 const COLLECTIONS_NAME = {
-    USER: 'users'
+    USERS: 'users'
 };
 
 const MESSAGE = {

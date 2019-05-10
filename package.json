@@ -1,5 +1,5 @@
 {
-  "name": "Study",
+  "name": "study",
   "version": "1.0.0",
   "dependencies": {
     "body-parser": "latest",

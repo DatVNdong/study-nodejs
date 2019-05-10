@@ -3,7 +3,8 @@ const API_URL = {
 };
 
 const COLLECTIONS_NAME = {
-    USER: 'users'
+    USERS: 'users',
+    PRODUCTS: 'products'
 };
 
 const MESSAGE = {
@@ -13,12 +14,6 @@ const MESSAGE = {
         NOT_EXISTED_USER: 'User is not existed.',
         EXISTED_USERNAME: 'Username is existed.',
         COMMON: 'Opps, something went wrong.',
-        /**
-         * @return {string}
-         */
-        REQUIRED_FIELD: function (field) {
-            return `${field} is a required field`;
-        }
     },
     SUCCESS: {
         CONNECT_SERVER: 'Connected successfully to server',
@@ -27,7 +22,7 @@ const MESSAGE = {
         CREATE_USER: 'Create new user successfully.',
         DELETE_USER: 'Remove user by Id successfully.',
         UPDATE_USER: 'Update user by Id successfully.',
-        NOTHING_CHANGE: 'Nothing change'
+        NO_RECORDS: 'No records'
     }
 };
 
