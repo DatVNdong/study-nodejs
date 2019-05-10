@@ -10,7 +10,7 @@ app.use(bodyParser.json({type: configs.APP_CONFIG.BODY_PARSE_TYPE}));
 
 // Loading apis here
 userRoute.load(app);
-// productRoute.load(app);
+productRoute.load(app);
 
 // Lazy load
 app.use(function (err, req, res, next) {

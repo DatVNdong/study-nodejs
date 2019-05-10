@@ -1,5 +1,6 @@
 const API_URL = {
-    USER_V1: '/api/v1/users'
+    USERS_V1: '/api/v1/users',
+    PRODUCTS_V1: '/api/v1/products'
 };
 
 const COLLECTIONS_NAME = {
@@ -10,18 +11,52 @@ const COLLECTIONS_NAME = {
 const MESSAGE = {
     ERROR: {
         DATABASE: 'Database error.',
-        INVALID_ID: 'Id must be an integer.',
-        NOT_EXISTED_USER: 'User is not existed.',
-        EXISTED_USERNAME: 'Username is existed.',
+        /**
+         * @return {string}
+         */
+        NOT_EXISTED_OBJECT: function (obj) {
+            return `${obj} is not existed.`;
+        },
+        /**
+         * @return {string}
+         */
+        EXISTED_OBJECT_NAME: function (obj) {
+            return `${obj} name is existed.`;
+        },
         COMMON: 'Opps, something went wrong.',
     },
     SUCCESS: {
         CONNECT_SERVER: 'Connected successfully to server',
-        GET_LIST_USERS: 'Get list users successfully.',
-        GET_USER_BY_ID: 'Get user by Id successfully.',
-        CREATE_USER: 'Create new user successfully.',
-        DELETE_USER: 'Remove user by Id successfully.',
-        UPDATE_USER: 'Update user by Id successfully.',
+        /**
+         * @return {string}
+         */
+        GET_LIST_OBJECTS: function (objs) {
+            return `Get list ${objs} successfully`;
+        },
+        /**
+         * @return {string}
+         */
+        GET_OBJECT_BY_ID: function (obj) {
+            return `Get ${obj} by Id successfully`;
+        },
+        /**
+         * @return {string}
+         */
+        CREATE_OBJECT: function (obj) {
+            return `Create new ${obj} successfully`;
+        },
+        /**
+         * @return {string}
+         */
+        UPDATE_OBJECT: function (obj) {
+            return `Update ${obj} by Id successfully`;
+        },
+        /**
+         * @return {string}
+         */
+        DELETE_OBJECT: function (obj) {
+            return `Remove ${obj} by Id successfully`;
+        },
         NO_RECORDS: 'No records'
     }
 };

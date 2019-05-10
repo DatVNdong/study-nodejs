@@ -1,5 +1,5 @@
 const API_URL = {
-    USER_V1: '/api/v1/users'
+    USERS_V1: '/api/v1/users'
 };
 
 const COLLECTIONS_NAME = {

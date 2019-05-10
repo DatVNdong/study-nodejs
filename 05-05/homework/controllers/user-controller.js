@@ -4,7 +4,7 @@ const resources = require('../commons/resources');
 const userMiddleware = require('../middlewares/user-middleware');
 const userService = require('../services/user-service');
 const User = require('../models/user');
-const userRoute = resources.API_URL.USER_V1;
+const userRoute = resources.API_URL.USERS_V1;
 const successMessage = resources.MESSAGE.SUCCESS;
 const errorMessage = resources.MESSAGE.ERROR;
 

@@ -1,7 +1,13 @@
-// exports.load = function (app) {
-//     app.get('/api/v1/users', validate(userValidation.getUserSchema()), userController.getListUser); // get list user
-//     // app.get('/api/v1/users/:id', userMiddleware.getUser, userController.getUser); // get one user by id
-//     // app.post('/api/v1/users', userMiddleware.createUser, userController.createUser); // create new user
-//     // app.delete('/api/v1/users/:id', userMiddleware.deleteUser, userController.deleteUser); // delete one user by id
-//     // app.put('/api/v1/users/:id', userMiddleware.updateUser, userController.updateUser); // update one user by id
-// };
+const validate = require('express-validation');
+const validation = require('../validations/product-validation');
+const controller = require('../controllers/product-controller');
+const resources = require('../commons/resources');
+const route = resources.API_URL.PRODUCTS_V1;
+
+exports.load = function (app) {
+    app.post(route, validate(validation.createSchema()), controller.create); // create new product
+    app.get(route, controller.findAll); // find list product
+    app.get(`${route}/:id`, validate(validation.findOneSchema()), controller.findOne); // find one product by id
+    app.put(`${route}/:id`, validate(validation.updateSchema()), controller.update); // update one product by id
+    app.delete(`${route}/:id`, validate(validation.findOneSchema()), controller.remove); // delete one product by id
+};
