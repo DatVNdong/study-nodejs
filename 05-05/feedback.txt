@@ -1,0 +1,27 @@
+DAT:
+- https://github.com/DatVNdong/study-nodejs/blob/3336b93e52b77dfcfc69d25ae3115e1148848fd5/05-05/homework/middlewares/user-middleware.js?fbclid=IwAR2TJ1Bgvb8BXtY7lpDIft10MnTFaXoLTj59Rjx7PAYJT1xNyInhQj9ABAw#L2
+Nên tách riêng khai báo ra.
+
+- https://github.com/DatVNdong/study-nodejs/blob/3336b93e52b77dfcfc69d25ae3115e1148848fd5/05-05/homework/controllers/user-controller.js?fbclid=IwAR2F3ts_vwU7oBkOEuRrbND_MLAp42P5auzepbAy0aHfImTe7qzQT9qNvy4#L11
+Nên khai báo const userRoute = resources.API_URL.USER_V1; lên đầu file. Tránh lặp lại.
+
+- https://github.com/DatVNdong/study-nodejs/blob/3336b93e52b77dfcfc69d25ae3115e1148848fd5/05-05/homework/controllers/user-controller.js?fbclid=IwAR31XNpkJ5d7tfYB54D7YVd0-HRVcAYBg3rYenGNzMmnXAdrr7yXBumsvy4#L15
+Mongodb nó tự generate -> ko cần phải làm thủ công.
+
+- https://github.com/DatVNdong/study-nodejs/blob/3336b93e52b77dfcfc69d25ae3115e1148848fd5/05-05/homework/controllers/user-controller.js?fbclid=IwAR2-4ssUUqhGHPEPfaThhsqgnij8v6rHIpGJQKXAWahSTcZwz7Rj1RxxR8M#L67
+Nếu ko có password em ko làm gì cả, thì nên check password trước khi check tồn tại user. Đỡ câu truy vấn db, mà nó bớt được đoạn check sau đó của .
+
+- https://github.com/DatVNdong/study-nodejs/blob/3336b93e52b77dfcfc69d25ae3115e1148848fd5/05-05/homework/helpers/connect-db-adapter.js?fbclid=IwAR3fw0fz5QKeK3kz1QSUVy8lK2tDR80a4XuJA6NBbDZePQUGSJNEeppUyr4#L1
+Mỗi lần gọi đến collection nào chưa có trong mảng collections thì em lại gọi kết nối đến db lại.
+Trong quá trình run app thì những collections của db ko thay đổi, nên em có thể init ngay từ đầu những collections luôn.
+Ví dụ collections = {
+users: db.collection('users'),
+products: db.collection('products');
+}
+Rồi trong controller em có thể gọi const userCollection = collections['users'];
+
+- https://github.com/DatVNdong/study-nodejs/blob/3336b93e52b77dfcfc69d25ae3115e1148848fd5/05-05/homework/services/user-service.js?fbclid=IwAR3nNSb5r1ovPl77tdz3z9Zjul-U_9OMLswN2YMIp89WFe_PzYzjcMOj7Ec#L30
+Sao ko thử tìm hàm count.
+
+- https://github.com/DatVNdong/study-nodejs/blob/3336b93e52b77dfcfc69d25ae3115e1148848fd5/05-05/homework/controllers/user-controller.js?fbclid=IwAR3u3foncXZjjykvBTJI3NFRwmOeMk2-egRWNpkKRphvXsyNCEB8NJMMVx8#L19
+Tạo mới user, ko nên trả về 1 array.

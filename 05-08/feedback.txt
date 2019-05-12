@@ -1,0 +1,7 @@
+File product-controller
+- Line 18: Nên để const test = await productService.isNameExisted(name) để thuận tiện việc debug
+- Line 37: Hàm findAll phải find cả user để xuất ra trong product
+- Line 40: Trong hàm return res thì phải tách error và tách success res, ko gộp được vì lúc đó ngược với restful, error
+nhưng vẫn trả status code 200
+- Line 67: Nên gán undefined thay vì null vì khi đó lưu vào db thì undefined sẽ ko lưu còn null sẽ lưu chữ null, trong
+trường hợp field đó ko required
