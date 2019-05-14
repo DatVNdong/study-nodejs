@@ -1,0 +1,21 @@
+Mongodb:
+- Ưu điểm:
+
+1. Nhanh -> get nhanh, write chậm hơn.
+....Khi nào nên dùng mongodb <> sql: Bài toán này get dữ liệu nhiều thì nên dùng mongodb ưu tiên, còn những bài toán
+write thì nên dùng db khác -> Kỳ lạ xuất hiện bài toán get nhiều write ít -> bài toán microservices, bài toán nào get
+nhiều thì bỏ vào 1 service riêng, write nhiều thì bỏ vào 1 service riêng
+
+2. Dễ config
+
+- Nhược điểm:
+
+1. No security
+
+2. Code nhiều
+
+3. Data rườm rà
+
+Mongoose: ngược lại với mongodb, cái nào ưu điểm thì thành nhược và ngược lại
+
+ES6: Nếu muốn require index.js thì chỉ cần import const models = require('/models') thay vì require('/models/index.js')
