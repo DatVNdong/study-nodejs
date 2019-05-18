@@ -1,4 +1,3 @@
-const {ObjectId} = require('mongoose');
 const Product = require('../models/product');
 const User = require('../models/user');
 const response = require('../helpers/response');

@@ -5,6 +5,31 @@ const successMessage = resources.MESSAGE.SUCCESS;
 const errorMessage = resources.MESSAGE.ERROR;
 const collectionName = resources.COLLECTIONS_NAME.USERS;
 const objectName = collectionName.slice(0, -1);
+const bcrypt = require('bcrypt-nodejs');
+const jwt = require('jsonwebtoken');
+const authConfig = require('../configs/configs').AUTHENTICATION;
+
+login = async (req, res, next) => {
+    try {
+        const {username, password} = req.body;
+
+        const user = await User.findOne({username}).lean();
+        if (!user) {
+            return response.error(errorMessage.NOT_EXISTED_OBJECT(objectName), undefined, res);
+        }
+        const isValidPassword = bcrypt.compareSync(password, user.password);
+        if (!isValidPassword) {
+            return next(new Error(errorMessage.INCORRECT_PASSWORD));
+        }
+        // Generate the access token to user.
+        const token = jwt.sign({username}, authConfig.PRIVATE_KEY, {expiresIn: authConfig.TIME_EXPIRES}); // data, key to verify the token
+
+        return response.success(successMessage.LOGIN_SUCCESS, token, res);
+    } catch (e) {
+        console.log(e);
+        return next(e);
+    }
+};
 
 isUsernameExisted = async username => {
     try {
@@ -21,9 +46,15 @@ create = async (req, res, next) => {
 
         const isExistedUsername = await isUsernameExisted(username);
         if (!isExistedUsername) {
-            const newUser = new User({username, password});
-            await newUser.save();
-            return response.success(successMessage.CREATE_OBJECT(objectName), newUser, res);
+            const salt = bcrypt.genSaltSync(2);
+            const hashPassword = bcrypt.hashSync(password, salt);
+            const result = await User.create({
+                username,
+                password: hashPassword
+            });
+            delete result._doc.password;
+
+            return response.success(successMessage.CREATE_OBJECT(objectName), result, res);
         }
 
         return next(new Error(errorMessage.EXISTED_OBJECT_NAME(objectName)));
@@ -34,7 +65,7 @@ create = async (req, res, next) => {
 
 findAll = async (req, res, next) => {
     try {
-        const users = await User.find().lean();
+        const users = await User.find({}, '-password -__v').lean();
 
         if (users.length !== 0) {
             return response.success(successMessage.GET_LIST_OBJECTS(collectionName), users, res);
@@ -49,7 +80,7 @@ findOne = async (req, res, next) => {
     try {
         const {id} = req.params;
 
-        const user = await User.findOne({_id: id}).lean();
+        const user = await User.findOne({_id: id}, '-password -__v').lean();
 
         if (user !== null) {
             return response.success(successMessage.GET_OBJECT_BY_ID(objectName), user, res);
@@ -102,6 +133,7 @@ remove = async (req, res, next) => {
 };
 
 module.exports = {
+    login,
     create,
     findAll,
     findOne,

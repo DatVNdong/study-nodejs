@@ -9,7 +9,13 @@ const DB_CONFIG = {
     DB_NAME: 'study_test'
 };
 
+const AUTHENTICATION = {
+    PRIVATE_KEY: 'supernova',
+    TIME_EXPIRES: 60
+};
+
 module.exports = Object.freeze({
     APP_CONFIG,
-    DB_CONFIG
+    DB_CONFIG,
+    AUTHENTICATION
 });

@@ -1,4 +1,5 @@
 const API_URL = {
+    LOGIN: '/api/v1/login',
     USERS_V1: '/api/v1/users',
     PRODUCTS_V1: '/api/v1/products'
 };
@@ -24,7 +25,9 @@ const MESSAGE = {
             return `${obj} name is existed.`;
         },
         COMMON: 'Opps, something went wrong.',
-        NO_RECORDS: 'No records'
+        NO_RECORDS: 'No records',
+        INCORRECT_PASSWORD: 'Password is incorrect',
+        NOT_EXISTED_TOKEN: 'Not found token'
     },
     SUCCESS: {
         CONNECT_SERVER: 'Connected successfully to server',
@@ -57,7 +60,8 @@ const MESSAGE = {
          */
         DELETE_OBJECT: function (obj) {
             return `Remove ${obj} by Id successfully`;
-        }
+        },
+        LOGIN_SUCCESS: 'Login successfully'
     }
 };
 
