@@ -1,0 +1,32 @@
+﻿Code demo: https://github.com/cedricVu/express-mongo.git
+Authentication:
+
+1. Login (username, password) => return token(key)
+- Get username, password from body
+- Find user by username
+- If not exist user => return error
+- Check password by compareSync bcrypt
+- If check false return error
+- return login successfull
+
+2. getOneUser, getAllProduct: required the token
+
+username: son
+password: abc123 -> jkflasjdlkfjejioajkldu3948938nnalkjdfkdjskfj3iu8udfjk
+
+3. JWT -> sign -> token
+- After login successfully, gen token along with data, secretKey.
+- Return the token.
+
+4. verify token
+- All user api need tobe user authentication
++ Get token from client in body, param, query, header
++ Verify the token
++ If not valid => catch error from jwt.
++ return data.
+
+- Homework
+1. Authentication to all apis.
+2. Mongooose: lean(), select()
+3. Refactor middleware authentication
+4. Research key pair for jwt.
